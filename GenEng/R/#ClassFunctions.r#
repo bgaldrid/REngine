@@ -1,0 +1,4 @@
+#Set of functions to alter how things such as print, plot, ect, interact with SMP object
+setMethod(f = "print",signiture = "SMP", definition = function(val)
+      {
+          print(paste(val@
