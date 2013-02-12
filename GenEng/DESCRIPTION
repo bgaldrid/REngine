@@ -1,0 +1,9 @@
+Package: GenEng
+Version: 0.1
+Date: 2013-02-11
+Title: General Engineering Tools
+Author: Ben Aldridge
+Maintainer: Ben Aldridge <bgaldridge@ucdavis.edu>
+Depends: R (>= 2.15.2), ggplot2, animation, graphics, RColorBrewer, stats
+Description: A set of functions for use in general engineering problems
+License: GPL-3
