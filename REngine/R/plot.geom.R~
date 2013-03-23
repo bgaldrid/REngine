@@ -1,0 +1,5 @@
+#Plotting function for geom
+plot.geom = function(geom)
+{
+    plot(x = geom[c("hmin","hmax"),], y = geom[c("vmin","vmax"),])
+}

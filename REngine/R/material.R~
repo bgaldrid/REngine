@@ -1,0 +1,20 @@
+#A constructor of a material
+
+setClass(class = "material", representation = list(MEAN = "numeric",
+                             SD = "numeric",
+                             SKEWNESS = "numeric",
+                             KURTOSIS = "numeric",
+                             N = "integer"))
+
+material = function(...)
+{
+    require(moments)
+    out = new(Class = "material")
+    D = list(...)
+    out = data.frame(MEAN = sapply(D,mean),
+               SD = sapply(D, sd),
+               SKEWNESS = sapply(D, skewness),
+               KURTOSIS = sapply(D, kurtosis),
+               N = sapply(D, length))
+}
+

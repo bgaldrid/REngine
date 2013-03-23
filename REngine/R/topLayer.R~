@@ -1,0 +1,14 @@
+#Function to find the surface of a geometry
+
+topLayer = function(geometry)
+{
+    temp = lapply(unique(geometry$x), function(val)
+       {
+           y = max(geometry[geometry$x==val,"y"])
+           c(val,y)
+       })
+    out = as.data.frame(do.call(rbind, temp))
+    names(out) = c("x","y")
+    out[order(out$x), ]
+
+}

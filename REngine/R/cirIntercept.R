@@ -1,0 +1,27 @@
+#Function to find intercept of circle with surface
+cirIntercept = function(Xc, Yc, R, TopLayer)
+{
+temp = lapply(1:(dim(TopLayer)[1]-1), function(i)
+   {
+       m = (TopLayer$y[i+1] - TopLayer$y[i]) / (TopLayer$x[i+1] - TopLayer$x[i])
+       b = TopLayer$y[i] - m * TopLayer$x[i]
+
+       f = function(x, Xc, Yc, m, b, R)
+   {
+       (x - Xc)^2 + (m * x + b - Yc)^2 - R^2
+   }
+
+       x = try(uniroot(f, interval = c(TopLayer$x[i], TopLayer$x[i+1]), Xc = Xc, Yc = Yc, m = m, b = b, R = R), silent = TRUE)
+#browser()
+       if(class(x)=="try-error")
+   {
+       data.frame(int.x = NA, int.y =  NA, m = m, b = b, xrange_low = TopLayer$x[i], xrange_high = TopLayer$x[i+1])
+   }else
+   {
+       y = m * x$root + b
+       data.frame(int.x = x$root, int.y =  y, m = m, b = b, xrange_low = TopLayer$x[i], xrange_high = TopLayer$x[i+1])
+   }
+   })
+do.call(rbind, temp)
+}
+
