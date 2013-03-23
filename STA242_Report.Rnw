@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{listings}
+
+
+\lstset{breaklines=true}
+
+\author{Ben Aldridge}
+\title{Assignment 5: Parallel Computing}
+
+\begin{document}
+
+<<results=FALSE,echo=FALSE, results = 'hide', warning = FALSE>>=
+opts_chunk$set(echo=FALSE,results='hide',warning=FALSE,error=TRUE,message=FALSE,concordance=TRUE,cache=FALSE,tidy=TRUE)
+
+library(parallel)
+library(ggplot2)
+library(randomForest)
+library(gridExtra)
+library(RSQLite)
+library(rpart)
+
+@
+
+
+
+
+\end{document}
