@@ -1,9 +1,9 @@
 Package: REngine
-Version: 0.1
-Date: 2013-03-20
+Version: 0.2
+Date: 2013-03-23
 Title: Engineering Tools for R
 Author: Ben Aldridge
 Maintainer: Ben Aldridge <bgaldridge@ucdavis.edu>
-Depends: R (>= 2.15.2), ggplot2, animation, graphics, RColorBrewer, stats
-Description: A set of functions for the analysis of engineering problems in a statistical framework
+Depends: R (>= 2.15.2), stats, moments, parallel
+Description: A set of functions for the analysis of engineering problems in a statistical framework. At this time it only has the function SlopeStability for slope stability analysis using the OMS method only. Will be adding more function and more mthods soon.
 License: GPL-3
